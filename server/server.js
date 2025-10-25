@@ -1,15 +1,16 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const dotenv = require("dotenv");
+// server.js
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
 
 // Load environment variables
 dotenv.config();
 
 // Import routes
-const itineraryRoutes = require("./routes/itineraryRoutes");
-const weatherRoutes = require("./routes/weatherRoutes");
-const tripRoutes = require("./routes/tripRoutes");
+import itineraryRoutes from "./routes/itineraryRoutes.js";
+import weatherRoutes from "./routes/weatherRoutes.js";
+import tripRoutes from "./routes/tripRoutes.js";
 
 // Initialize Express app
 const app = express();
@@ -26,7 +27,6 @@ const connectDB = async () => {
     console.log("✅ MongoDB Connected Successfully");
   } catch (error) {
     console.error("❌ MongoDB Connection Error:", error.message);
-    // Don't exit process, allow app to run without DB for API testing
     console.log("⚠️  Running without database connection");
   }
 };

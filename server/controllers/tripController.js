@@ -1,4 +1,5 @@
-const Trip = require("../models/Trip");
+// controllers/tripController.js
+import Trip from "../models/Trip.js";
 
 // Get all suggested trips
 const getAllTrips = async (req, res) => {
@@ -162,8 +163,4 @@ const seedTrips = async (req, res) => {
   }
 };
 
-module.exports = {
-  getAllTrips,
-  getTripById,
-  seedTrips,
-};
+export { getAllTrips, getTripById, seedTrips };

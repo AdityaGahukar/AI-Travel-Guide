@@ -1,4 +1,5 @@
-const axios = require("axios");
+// controllers/weatherController.js
+import axios from "axios";
 
 const getWeather = async (req, res) => {
   try {
@@ -41,4 +42,4 @@ const getWeather = async (req, res) => {
   }
 };
 
-module.exports = { getWeather };
+export { getWeather };

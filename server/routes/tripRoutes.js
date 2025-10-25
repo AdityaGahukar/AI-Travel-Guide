@@ -1,10 +1,8 @@
-const express = require("express");
+// routes/tripRoutes.js
+import express from "express";
+import { getAllTrips, getTripById, seedTrips } from "../controllers/tripController.js";
+
 const router = express.Router();
-const {
-  getAllTrips,
-  getTripById,
-  seedTrips,
-} = require("../controllers/tripController");
 
 // GET /api/trips - Get all suggested trips
 router.get("/", getAllTrips);
@@ -15,4 +13,4 @@ router.get("/seed", seedTrips);
 // GET /api/trips/:id - Get single trip by ID
 router.get("/:id", getTripById);
 
-module.exports = router;
+export default router;

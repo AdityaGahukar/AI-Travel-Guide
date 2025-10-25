@@ -1,8 +1,10 @@
-const express = require("express");
+// routes/weatherRoutes.js
+import express from "express";
+import { getWeather } from "../controllers/weatherController.js";
+
 const router = express.Router();
-const { getWeather } = require("../controllers/weatherController");
 
 // GET /api/weather?city=Paris - Get weather for a city
 router.get("/", getWeather);
 
-module.exports = router;
+export default router;
